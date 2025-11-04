@@ -21,9 +21,15 @@ app.use(cors());
 // --- Mount routes ---
 const authRoutes = require('./routes/auth');
 const productRoutes = require('./routes/products');
+const supplierRoutes = require('./routes/suppliers');
+const invoiceRoutes = require('./routes/invoices');
+const purchaseOrderRoutes = require('./routes/purchaseOrders');
 
 app.use('/api/auth', authRoutes);
 app.use('/api/products', productRoutes);
+app.use('/api/suppliers', supplierRoutes);
+app.use('/api/invoices', invoiceRoutes);
+app.use('/api/purchase-orders', purchaseOrderRoutes);
 
 
 // --- Basic route to check server is running ---

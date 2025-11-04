@@ -79,7 +79,19 @@ exports.login = async (req, res) => {
     }
 
     const token = createToken(user);
-    return res.json({ user: sanitizeUser(user), token });
+
+    // Get low-stock products for alert
+    const Product = require('../models/Product');
+    const lowStockProducts = await Product.find({
+      reorderLevel: { $gt: 0 },
+      $expr: { $lte: ["$quantity", "$reorderLevel"] }
+    }).select('name sku quantity reorderLevel');
+
+    return res.json({
+      user: sanitizeUser(user),
+      token,
+      lowStockProducts
+    });
   } catch (err) {
     console.error('Login error:', err);
     return res.status(500).json({ error: 'Server error while logging in.' });

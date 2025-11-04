@@ -9,7 +9,7 @@ const Product = require('../models/Product');
  */
 exports.createProduct = async (req, res) => {
   try {
-    const { name, sku, description, category, price, quantity, reorderLevel } = req.body;
+  const { name, sku, description, category, price, quantity, supplier } = req.body;
 
     // Basic validation
     if (!name || !sku) {
@@ -22,6 +22,15 @@ exports.createProduct = async (req, res) => {
       return res.status(409).json({ error: 'A product with this SKU already exists.' });
     }
 
+    // If supplier is provided, validate it exists
+    if (supplier) {
+      const Supplier = require('../models/Supplier');
+      const supplierExists = await Supplier.findById(supplier);
+      if (!supplierExists) {
+        return res.status(400).json({ error: 'Supplier not found.' });
+      }
+    }
+
     const newProduct = new Product({
       name: name.trim(),
       sku: sku.toUpperCase().trim(),
@@ -29,7 +38,7 @@ exports.createProduct = async (req, res) => {
       category,
       price,
       quantity,
-      reorderLevel
+      supplier: supplier || null
     });
 
     await newProduct.save();
@@ -46,7 +55,7 @@ exports.createProduct = async (req, res) => {
  */
 exports.getAllProducts = async (req, res) => {
   try {
-    const products = await Product.find().sort({ createdAt: -1 });
+    const products = await Product.find().sort({ createdAt: -1 }).populate('supplier', 'name contactEmail phone address');
     return res.json(products);
   } catch (err) {
     console.error('Get all products error:', err);
@@ -60,7 +69,7 @@ exports.getAllProducts = async (req, res) => {
  */
 exports.getProductById = async (req, res) => {
   try {
-    const product = await Product.findById(req.params.id);
+    const product = await Product.findById(req.params.id).populate('supplier', 'name contactEmail phone address');
     if (!product) return res.status(404).json({ error: 'Product not found.' });
     return res.json(product);
   } catch (err) {
@@ -76,6 +85,14 @@ exports.getProductById = async (req, res) => {
 exports.updateProduct = async (req, res) => {
   try {
     const updates = req.body;
+    // If supplier is provided, validate it exists
+    if (updates.supplier) {
+      const Supplier = require('../models/Supplier');
+      const supplierExists = await Supplier.findById(updates.supplier);
+      if (!supplierExists) {
+        return res.status(400).json({ error: 'Supplier not found.' });
+      }
+    }
     const product = await Product.findByIdAndUpdate(req.params.id, updates, {
       new: true,
       runValidators: true

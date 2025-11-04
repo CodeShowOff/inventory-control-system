@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 
 export default function Dashboard() {
   const [products, setProducts] = useState([]);
@@ -14,7 +14,9 @@ export default function Dashboard() {
     category: '',
     price: '',
     quantity: '',
+    supplier: ''
   });
+  const [suppliers, setSuppliers] = useState([]);
 
   const handleLogout = () => {
     localStorage.removeItem('token');
@@ -36,12 +38,25 @@ export default function Dashboard() {
 
   useEffect(() => {
     fetchProducts();
+    fetchSuppliers();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
+
+  const fetchSuppliers = async () => {
+    try {
+      const res = await axios.get('http://localhost:5000/api/suppliers', {
+        headers: { Authorization: `Bearer ${token}` }
+      });
+      setSuppliers(res.data);
+    } catch (err) {
+      // ignore supplier error
+    }
+  };
 
   const handleAddProduct = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.post(
+      await axios.post(
         'http://localhost:5000/api/products',
         {
           name: newProduct.name,
@@ -49,11 +64,12 @@ export default function Dashboard() {
           category: newProduct.category,
           price: Number(newProduct.price),
           quantity: Number(newProduct.quantity),
+          supplier: newProduct.supplier || null
         },
         { headers: { Authorization: `Bearer ${token}` } }
       );
-      setProducts([res.data, ...products]);
-      setNewProduct({ name: '', sku: '', category: '', price: '', quantity: '' });
+      setNewProduct({ name: '', sku: '', category: '', price: '', quantity: '', supplier: '' });
+      fetchProducts();
     } catch (err) {
       setError(err.response?.data?.error || 'Failed to add product');
     }
@@ -103,6 +119,10 @@ export default function Dashboard() {
 
       <div style={{ marginBottom: '20px' }}>
         <button onClick={handleLogout}>Logout</button>
+  <Link to="/suppliers" style={{ marginLeft: 10 }}>Suppliers</Link>
+  <Link to="/invoices" style={{ marginLeft: 10 }}>Invoices</Link>
+  <Link to="/alerts/low-stock" style={{ marginLeft: 10, color: 'red' }}>Low Stock Alerts</Link>
+  <Link to="/purchase-orders" style={{ marginLeft: 10 }}>Purchase Orders</Link>
       </div>
 
 
@@ -141,6 +161,15 @@ export default function Dashboard() {
           value={newProduct.quantity}
           onChange={e => setNewProduct({ ...newProduct, quantity: e.target.value })}
         />
+        <select
+          value={newProduct.supplier}
+          onChange={e => setNewProduct({ ...newProduct, supplier: e.target.value })}
+        >
+          <option value="">Select Supplier (optional)</option>
+          {suppliers.map(s => (
+            <option key={s._id} value={s._id}>{s.name}</option>
+          ))}
+        </select>
         <button type="submit">Add Product</button>
       </form>
 
@@ -153,6 +182,7 @@ export default function Dashboard() {
             <th>Category</th>
             <th>Price</th>
             <th>Quantity</th>
+            <th>Supplier</th>
             <th>Stock</th>
           </tr>
         </thead>
@@ -164,6 +194,11 @@ export default function Dashboard() {
               <td>{p.category}</td>
               <td>{p.price}</td>
               <td>{p.quantity}</td>
+              <td>
+                {p.supplier && p.supplier.name ? (
+                  <Link to={`/suppliers/${p.supplier._id}`}>{p.supplier.name}</Link>
+                ) : '-'}
+              </td>
               <td>
                 <button onClick={() => handleAddStock(p._id)}>+</button>{' '}
                 <button onClick={() => handleRemoveStock(p._id)}>-</button>

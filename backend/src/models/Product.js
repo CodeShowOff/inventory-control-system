@@ -42,11 +42,6 @@ const ProductSchema = new mongoose.Schema({
     default: 0,
     min: 0
   },
-  reorderLevel: {
-    type: Number,
-    default: 0,
-    min: 0
-  },
   isActive: {
     type: Boolean,
     default: true
