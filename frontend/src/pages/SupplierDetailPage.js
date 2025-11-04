@@ -22,18 +22,24 @@ function SupplierDetailPage() {
     fetchSupplier();
   }, [id, token]);
 
-  if (error) return <div>{error}</div>;
-  if (!supplier) return <div>Loading...</div>;
+  if (error) return <div className="container py-5"><div className="alert alert-danger">{error}</div></div>;
+  if (!supplier) return <div className="container py-5"><div>Loading...</div></div>;
 
   return (
-    <div style={{ maxWidth: '400px', margin: '50px auto' }}>
-      <h2>Supplier Details</h2>
-      <p><strong>Name:</strong> {supplier.name}</p>
-      <p><strong>Email:</strong> {supplier.contactEmail}</p>
-      <p><strong>Phone:</strong> {supplier.phone}</p>
-      <p><strong>Address:</strong> {supplier.address}</p>
-      <p><strong>Notes:</strong> {supplier.notes}</p>
-      <p><strong>Created At:</strong> {new Date(supplier.createdAt).toLocaleString()}</p>
+    <div className="container py-5 d-flex justify-content-center">
+      <div className="card shadow" style={{ maxWidth: '400px', width: '100%' }}>
+        <div className="card-body">
+          <h2 className="card-title mb-4">Supplier Details</h2>
+          <ul className="list-group list-group-flush mb-3">
+            <li className="list-group-item"><strong>Name:</strong> {supplier.name}</li>
+            <li className="list-group-item"><strong>Email:</strong> {supplier.contactEmail}</li>
+            <li className="list-group-item"><strong>Phone:</strong> {supplier.phone}</li>
+            <li className="list-group-item"><strong>Address:</strong> {supplier.address}</li>
+            <li className="list-group-item"><strong>Notes:</strong> {supplier.notes}</li>
+            <li className="list-group-item"><strong>Created At:</strong> {new Date(supplier.createdAt).toLocaleString()}</li>
+          </ul>
+        </div>
+      </div>
     </div>
   );
 }

@@ -43,6 +43,11 @@ function InvoicePage() {
 
   const handleSubmit = async e => {
     e.preventDefault();
+    // Prevent creating invoice if a product is selected but not added
+    if (item.product) {
+      alert('Please add the selected product to the invoice before submitting.');
+      return;
+    }
     if (!form.items.length) {
       alert('Please add at least one product to the invoice.');
       return;
@@ -78,40 +83,105 @@ function InvoicePage() {
   };
 
   return (
-    <div>
-      <h2>Invoices</h2>
-      <form onSubmit={handleSubmit}>
-        <input name="customerName" placeholder="Customer Name" value={form.customerName} onChange={handleFormChange} required />
-        <input name="tax" type="number" placeholder="Tax" value={form.tax} onChange={handleFormChange} />
-        <div>
-          <select name="product" value={item.product} onChange={handleItemChange} required>
-            <option value="">Select Product</option>
-            {products.map(p => <option key={p._id} value={p._id}>{p.name}</option>)}
-          </select>
-          <input name="quantity" type="number" min="1" value={item.quantity} onChange={handleItemChange} />
-          <button type="button" onClick={addItem}>Add Item</button>
+    <div className="container py-5">
+      <div className="card mb-4">
+        <div className="card-body">
+          <h2 className="card-title mb-4">Create Invoice</h2>
+          <form onSubmit={handleSubmit} className="row g-2 align-items-end">
+            <div className="col-md-4">
+              <label className="form-label">Customer Name</label>
+              <input name="customerName" className="form-control" placeholder="Customer Name" value={form.customerName} onChange={handleFormChange} required />
+            </div>
+            <div className="col-md-2">
+              <label className="form-label">Tax</label>
+              <input name="tax" type="number" className="form-control" placeholder="Tax" value={form.tax} onChange={handleFormChange} />
+            </div>
+            <div className="w-100"></div>
+            <div className="col-md-4">
+              <label className="form-label">Product</label>
+              <select name="product" className="form-select" value={item.product} onChange={handleItemChange}>
+                <option value="">Select Product</option>
+                {products.map(p => <option key={p._id} value={p._id}>{p.name}</option>)}
+              </select>
+            </div>
+            <div className="col-md-2">
+              <label className="form-label">Quantity</label>
+              <input name="quantity" type="number" min="1" className="form-control" value={item.quantity} onChange={handleItemChange} />
+            </div>
+            <div className="col-md-2 d-flex align-items-end">
+              <button type="button" className="btn btn-secondary w-100" onClick={addItem}>Add Item</button>
+            </div>
+            <div className="w-100"></div>
+            <div className="col-12">
+              {form.items.length > 0 && (
+                <ul className="list-group mb-2">
+                  {form.items.map((it, idx) => (
+                    <li className="list-group-item d-flex justify-content-between align-items-center" key={idx}>
+                      {products.find(p => p._id === it.product)?.name || it.product} x {it.quantity} @ {it.price}
+                    </li>
+                  ))}
+                </ul>
+              )}
+            </div>
+            <div className="col-12">
+              <button type="submit" className="btn btn-primary">Create Invoice</button>
+            </div>
+          </form>
         </div>
-        <ul>
-          {form.items.map((it, idx) => (
-            <li key={idx}>{products.find(p => p._id === it.product)?.name || it.product} x {it.quantity} @ {it.price}</li>
-          ))}
-        </ul>
-        <button type="submit">Create Invoice</button>
-      </form>
-      <ul>
-        {invoices.map(inv => (
-          <li key={inv._id}>
-            {inv.customerName} | Total: {inv.total} | Tax: {inv.tax} | Paid: {inv.paid ? 'Yes' : 'No'}
-            <button onClick={() => markPaid(inv._id)} disabled={inv.paid}>Mark Paid</button>
-            <button onClick={() => deleteInvoice(inv._id)}>Delete</button>
-            <ul>
-              {inv.items.map((it, idx) => (
-                <li key={idx}>{it.product?.name || it.product} x {it.quantity} @ {it.price}</li>
-              ))}
-            </ul>
-          </li>
-        ))}
-      </ul>
+      </div>
+
+      <div className="card">
+        <div className="card-body">
+          <h2 className="card-title mb-4">Invoices</h2>
+          <div className="table-responsive">
+            <table className="table table-bordered align-middle">
+              <thead className="table-light">
+                <tr>
+                  <th>Customer</th>
+                  <th>Total</th>
+                  <th>Tax</th>
+                  <th>Paid</th>
+                  <th>Items</th>
+                  <th>Actions</th>
+                </tr>
+              </thead>
+              <tbody>
+                {invoices.map(inv => {
+                  // Calculate subtotal
+                  const subtotal = inv.items.reduce((sum, it) => sum + (it.price * it.quantity), 0);
+                  // Tax can be percent (0-100) or absolute, here treat as percent if <= 100
+                  let taxAmount = 0;
+                  if (inv.tax > 0 && inv.tax <= 100) {
+                    taxAmount = subtotal * (inv.tax / 100);
+                  } else if (inv.tax > 100) {
+                    taxAmount = inv.tax;
+                  }
+                  const total = subtotal + taxAmount;
+                  return (
+                    <tr key={inv._id}>
+                      <td>{inv.customerName}</td>
+                      <td>{total.toFixed(2)}</td>
+                      <td>{inv.tax}</td>
+                      <td>{inv.paid ? <span className="badge bg-success">Yes</span> : <span className="badge bg-warning text-dark">No</span>}</td>
+                      <td>
+                        <ul className="mb-0 ps-3">
+                          {inv.items.map((it, idx) => (
+                            <li key={idx}>{it.product?.name || it.product} x {it.quantity} @ {it.price}</li>
+                          ))}
+                        </ul>
+                      </td>
+                      <td>
+                        <button className="btn btn-success btn-sm me-1" onClick={() => markPaid(inv._id)} disabled={inv.paid}>Mark Paid</button>
+                        <button className="btn btn-danger btn-sm" onClick={() => deleteInvoice(inv._id)}>Delete</button>
+                      </td>
+                    </tr>
+                  );
+                })}
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
     </div>
   );
 }

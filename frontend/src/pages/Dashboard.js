@@ -113,100 +113,96 @@ export default function Dashboard() {
   };
 
   return (
-    <div style={{ maxWidth: '800px', margin: '50px auto' }}>
-      <h2>Dashboard</h2>
-      {error && <p style={{ color: 'red' }}>{error}</p>}
+    <div className="container py-5">
+      <div className="d-flex justify-content-between align-items-center mb-4">
+        <h2 className="mb-0">Dashboard</h2>
+        <button className="btn btn-outline-danger" onClick={handleLogout}>Logout</button>
+      </div>
+      {error && <div className="alert alert-danger">{error}</div>}
 
-      <div style={{ marginBottom: '20px' }}>
-        <button onClick={handleLogout}>Logout</button>
-  <Link to="/suppliers" style={{ marginLeft: 10 }}>Suppliers</Link>
-  <Link to="/invoices" style={{ marginLeft: 10 }}>Invoices</Link>
-  <Link to="/alerts/low-stock" style={{ marginLeft: 10, color: 'red' }}>Low Stock Alerts</Link>
-  <Link to="/purchase-orders" style={{ marginLeft: 10 }}>Purchase Orders</Link>
+      <div className="mb-4 d-flex flex-wrap gap-2">
+        <Link to="/suppliers" className="btn" style={{background:'#2196f3',color:'#fff'}}>Suppliers</Link>
+        <Link to="/invoices" className="btn" style={{background:'#4caf50',color:'#fff'}}>Invoices</Link>
+        <Link to="/alerts/low-stock" className="btn" style={{background:'#ff5252',color:'#fff'}}>Low Stock Alerts</Link>
+        <Link to="/purchase-orders" className="btn" style={{background:'#ffeb3b',color:'#333',border:'1px solid #fbc02d'}}>Purchase Orders</Link>
       </div>
 
-
       {/* Add Product Form */}
-      <h3>Add New Product</h3>
-      <form onSubmit={handleAddProduct} style={{ marginBottom: '20px' }}>
-        <input
-          type="text"
-          placeholder="Name"
-          value={newProduct.name}
-          onChange={e => setNewProduct({ ...newProduct, name: e.target.value })}
-          required
-        />
-        <input
-          type="text"
-          placeholder="SKU"
-          value={newProduct.sku}
-          onChange={e => setNewProduct({ ...newProduct, sku: e.target.value })}
-          required
-        />
-        <input
-          type="text"
-          placeholder="Category"
-          value={newProduct.category}
-          onChange={e => setNewProduct({ ...newProduct, category: e.target.value })}
-        />
-        <input
-          type="number"
-          placeholder="Price"
-          value={newProduct.price}
-          onChange={e => setNewProduct({ ...newProduct, price: e.target.value })}
-        />
-        <input
-          type="number"
-          placeholder="Quantity"
-          value={newProduct.quantity}
-          onChange={e => setNewProduct({ ...newProduct, quantity: e.target.value })}
-        />
-        <select
-          value={newProduct.supplier}
-          onChange={e => setNewProduct({ ...newProduct, supplier: e.target.value })}
-        >
-          <option value="">Select Supplier (optional)</option>
-          {suppliers.map(s => (
-            <option key={s._id} value={s._id}>{s.name}</option>
-          ))}
-        </select>
-        <button type="submit">Add Product</button>
-      </form>
+      <div className="card mb-4">
+        <div className="card-body">
+          <h4 className="card-title mb-3">Add New Product</h4>
+          <form onSubmit={handleAddProduct} className="row g-2 align-items-end">
+            <div className="col-md-4">
+              <input type="text" className="form-control" placeholder="Name" value={newProduct.name} onChange={e => setNewProduct({ ...newProduct, name: e.target.value })} required />
+            </div>
+            <div className="col-md-2">
+              <input type="text" className="form-control" placeholder="SKU" value={newProduct.sku} onChange={e => setNewProduct({ ...newProduct, sku: e.target.value })} required />
+            </div>
+            <div className="col-md-2">
+              <input type="text" className="form-control" placeholder="Category" value={newProduct.category} onChange={e => setNewProduct({ ...newProduct, category: e.target.value })} />
+            </div>
+            <div className="col-md-1">
+              <input type="number" className="form-control" placeholder="Price" value={newProduct.price} onChange={e => setNewProduct({ ...newProduct, price: e.target.value })} />
+            </div>
+            <div className="col-md-1">
+              <input type="number" className="form-control" placeholder="Qty" value={newProduct.quantity} onChange={e => setNewProduct({ ...newProduct, quantity: e.target.value })} />
+            </div>
+            <div className="col-md-2">
+              <select className="form-select" value={newProduct.supplier} onChange={e => setNewProduct({ ...newProduct, supplier: e.target.value })}>
+                <option value="">Supplier (optional)</option>
+                {suppliers.map(s => (
+                  <option key={s._id} value={s._id}>{s.name}</option>
+                ))}
+              </select>
+            </div>
+            <div className="col-12 col-md-auto">
+              <button type="submit" className="btn btn-primary">Add Product</button>
+            </div>
+          </form>
+        </div>
+      </div>
 
       {/* Product Table */}
-      <table border="1" cellPadding="10">
-        <thead>
-          <tr>
-            <th>Name</th>
-            <th>SKU</th>
-            <th>Category</th>
-            <th>Price</th>
-            <th>Quantity</th>
-            <th>Supplier</th>
-            <th>Stock</th>
-          </tr>
-        </thead>
-        <tbody>
-          {products.map(p => (
-            <tr key={p._id}>
-              <td>{p.name}</td>
-              <td>{p.sku}</td>
-              <td>{p.category}</td>
-              <td>{p.price}</td>
-              <td>{p.quantity}</td>
-              <td>
-                {p.supplier && p.supplier.name ? (
-                  <Link to={`/suppliers/${p.supplier._id}`}>{p.supplier.name}</Link>
-                ) : '-'}
-              </td>
-              <td>
-                <button onClick={() => handleAddStock(p._id)}>+</button>{' '}
-                <button onClick={() => handleRemoveStock(p._id)}>-</button>
-              </td>
-            </tr>
-          ))}
-        </tbody>
-      </table>
+      <div className="card">
+        <div className="card-body">
+          <h4 className="card-title mb-3">Products</h4>
+          <div className="table-responsive">
+            <table className="table table-bordered align-middle">
+              <thead className="table-light">
+                <tr>
+                  <th>Name</th>
+                  <th>SKU</th>
+                  <th>Category</th>
+                  <th>Price</th>
+                  <th>Quantity</th>
+                  <th>Supplier</th>
+                  <th>Stock</th>
+                </tr>
+              </thead>
+              <tbody>
+                {products.map(p => (
+                  <tr key={p._id}>
+                    <td>{p.name}</td>
+                    <td>{p.sku}</td>
+                    <td>{p.category}</td>
+                    <td>{p.price}</td>
+                    <td>{p.quantity}</td>
+                    <td>
+                      {p.supplier && p.supplier.name ? (
+                        <Link to={`/suppliers/${p.supplier._id}`}>{p.supplier.name}</Link>
+                      ) : '-'}
+                    </td>
+                    <td>
+                      <button className="btn btn-success btn-sm me-1" title="Add Stock" onClick={() => handleAddStock(p._id)}>+</button>
+                      <button className="btn btn-danger btn-sm" title="Remove Stock" onClick={() => handleRemoveStock(p._id)}>-</button>
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
     </div>
   );
 }

@@ -11,38 +11,44 @@ function LowStockAlertsPage() {
         headers: { Authorization: `Bearer ${token}` }
       });
       // Consider low stock if quantity <= 5
-      setProducts(res.data.filter(p => p.quantity <= 5));
+      setProducts(res.data.filter(p => p.quantity <= 50));
     };
     fetchLowStock();
   }, [token]);
 
   return (
-    <div style={{ maxWidth: '600px', margin: '40px auto' }}>
-      <h2>Low Stock Alerts</h2>
-      {products.length === 0 ? (
-        <p>All products are sufficiently stocked.</p>
-      ) : (
-        <table border="1" cellPadding="10" style={{ width: '100%' }}>
-          <thead>
-            <tr>
-              <th>Name</th>
-              <th>SKU</th>
-              <th>Quantity</th>
-              <th>Supplier</th>
-            </tr>
-          </thead>
-          <tbody>
-            {products.map(p => (
-              <tr key={p._id} style={{ background: '#ffe5e5' }}>
-                <td>{p.name}</td>
-                <td>{p.sku}</td>
-                <td>{p.quantity}</td>
-                <td>{p.supplier && p.supplier.name ? p.supplier.name : '-'}</td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
-      )}
+    <div className="container py-5 d-flex justify-content-center">
+      <div className="card shadow w-100" style={{ maxWidth: '700px' }}>
+        <div className="card-body">
+          <h2 className="card-title mb-4">Low Stock Alerts</h2>
+          {products.length === 0 ? (
+            <div className="alert alert-success">All products are sufficiently stocked.</div>
+          ) : (
+            <div className="table-responsive">
+              <table className="table table-bordered align-middle">
+                <thead className="table-danger">
+                  <tr>
+                    <th>Name</th>
+                    <th>SKU</th>
+                    <th>Quantity</th>
+                    <th>Supplier</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {products.map(p => (
+                    <tr key={p._id}>
+                      <td>{p.name}</td>
+                      <td>{p.sku}</td>
+                      <td>{p.quantity}</td>
+                      <td>{p.supplier && p.supplier.name ? p.supplier.name : '-'}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          )}
+        </div>
+      </div>
     </div>
   );
 }

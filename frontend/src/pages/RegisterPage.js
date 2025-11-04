@@ -22,27 +22,31 @@ export default function RegisterPage() {
   };
 
   return (
-    <div style={{ maxWidth: '400px', margin: '50px auto' }}>
-      <h2>Register</h2>
-      {error && <p style={{ color: 'red' }}>{error}</p>}
-      <form onSubmit={handleRegister}>
-        <div>
-          <label>Name:</label>
-          <input type="text" value={name} onChange={e => setName(e.target.value)} required />
+    <div className="container d-flex justify-content-center align-items-center min-vh-100">
+      <div className="card shadow p-4" style={{ maxWidth: '400px', width: '100%' }}>
+        <div className="card-body">
+          <h2 className="card-title text-center mb-4">Register</h2>
+          {error && <div className="alert alert-danger">{error}</div>}
+          <form onSubmit={handleRegister}>
+            <div className="mb-3">
+              <label className="form-label">Name</label>
+              <input type="text" className="form-control" value={name} onChange={e => setName(e.target.value)} required />
+            </div>
+            <div className="mb-3">
+              <label className="form-label">Email</label>
+              <input type="email" className="form-control" value={email} onChange={e => setEmail(e.target.value)} required />
+            </div>
+            <div className="mb-3">
+              <label className="form-label">Password</label>
+              <input type="password" className="form-control" value={password} onChange={e => setPassword(e.target.value)} required />
+            </div>
+            <button type="submit" className="btn btn-primary w-100">Register</button>
+          </form>
+          <p className="mt-3 text-center">
+            Already have an account? <a href="/login">Login</a>
+          </p>
         </div>
-        <div>
-          <label>Email:</label>
-          <input type="email" value={email} onChange={e => setEmail(e.target.value)} required />
-        </div>
-        <div>
-          <label>Password:</label>
-          <input type="password" value={password} onChange={e => setPassword(e.target.value)} required />
-        </div>
-        <button type="submit">Register</button>
-      </form>
-      <p>
-        Already have an account? <a href="/login">Login</a>
-      </p>
+      </div>
     </div>
   );
 }
