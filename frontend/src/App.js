@@ -12,9 +12,25 @@ import SupplierDetailPage from './pages/SupplierDetailPage';
 import LowStockAlertsPage from './pages/LowStockAlertsPage';
 import PurchaseOrdersPage from './pages/PurchaseOrdersPage';
 
+import { useState, useEffect } from 'react';
+
 function App() {
-  // Simple auth check using localStorage token
-  const token = localStorage.getItem('token');
+  // Use state for token so it updates on login/register/logout
+  const [token, setToken] = useState(() => localStorage.getItem('token'));
+
+  useEffect(() => {
+    // Listen for token changes in localStorage (e.g., from login/register/logout)
+    const onStorage = () => setToken(localStorage.getItem('token'));
+    window.addEventListener('storage', onStorage);
+    return () => window.removeEventListener('storage', onStorage);
+  }, []);
+
+  // Also update token on focus (for single tab usage)
+  useEffect(() => {
+    const onFocus = () => setToken(localStorage.getItem('token'));
+    window.addEventListener('focus', onFocus);
+    return () => window.removeEventListener('focus', onFocus);
+  }, []);
 
   return (
     <Router>
@@ -22,8 +38,8 @@ function App() {
       <div style={{ paddingTop: 60 }}>
         <Routes>
           <Route path="/" element={<HomePage />} />
-          <Route path="/login" element={<LoginPage />} />
-          <Route path="/register" element={<RegisterPage />} />
+          <Route path="/login" element={<LoginPage onLogin={() => setToken(localStorage.getItem('token'))} />} />
+          <Route path="/register" element={<RegisterPage onRegister={() => setToken(localStorage.getItem('token'))} />} />
           <Route path="/dashboard" element={token ? <Dashboard /> : <Navigate to="/login" />} />
           <Route path="/suppliers" element={token ? <SupplierPage /> : <Navigate to="/login" />} />
           <Route path="/suppliers/:id" element={token ? <SupplierDetailPage /> : <Navigate to="/login" />} />
