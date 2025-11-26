@@ -50,7 +50,7 @@ function App() {
           <Route path="/about" element={<AboutPage />} />
         </Routes>
       </div>
-      <div style={{ position: 'fixed', left: 0, right: 0, bottom: 0, background: '#eee', padding: '10px 0', textAlign: 'center' }}>
+      <div style={{left: 0, right: 0, bottom: 0, background: '#eee', padding: '10px 0', textAlign: 'center' }}>
         <a href="/about" style={{ color: '#333', textDecoration: 'underline' }}>About</a>
       </div>
     </Router>
