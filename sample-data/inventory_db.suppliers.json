@@ -1,0 +1,100 @@
+[{
+  "_id": {
+    "$oid": "69273b69231275b197b2dbb2"
+  },
+  "name": "TechSupply Co.",
+  "contactEmail": "contact@techsupply.com",
+  "phone": "+91-9876543210",
+  "address": "123 Tech Park Mumbai Maharashtra",
+  "notes": "Premium electronics supplier"
+},
+{
+  "_id": {
+    "$oid": "69273b69231275b197b2dbb3"
+  },
+  "name": "Global Distributors",
+  "contactEmail": "sales@globaldist.com",
+  "phone": "+91-9876543211",
+  "address": "456 Trade Center Delhi NCR",
+  "notes": "Bulk wholesale distributor"
+},
+{
+  "_id": {
+    "$oid": "69273b69231275b197b2dbb4"
+  },
+  "name": "MediCare Suppliers",
+  "contactEmail": "info@medicare.com",
+  "phone": "+91-9876543212",
+  "address": "789 Health Plaza Bangalore Karnataka",
+  "notes": "Medical and healthcare products"
+},
+{
+  "_id": {
+    "$oid": "69273b69231275b197b2dbb5"
+  },
+  "name": "Office Essentials",
+  "contactEmail": "support@officeessentials.com",
+  "phone": "+91-9876543213",
+  "address": "321 Business Hub Pune Maharashtra",
+  "notes": "Office supplies and stationery"
+},
+{
+  "_id": {
+    "$oid": "69273b69231275b197b2dbb6"
+  },
+  "name": "FoodMart Wholesale",
+  "contactEmail": "orders@foodmart.com",
+  "phone": "+91-9876543214",
+  "address": "654 Market Street Chennai Tamil Nadu",
+  "notes": "Food and beverage distributor"
+},
+{
+  "_id": {
+    "$oid": "69273b69231275b197b2dbb7"
+  },
+  "name": "Fashion House Ltd",
+  "contactEmail": "fashion@fashionhouse.com",
+  "phone": "+91-9876543215",
+  "address": "987 Textile Center Ahmedabad Gujarat",
+  "notes": "Clothing and apparel supplier"
+},
+{
+  "_id": {
+    "$oid": "69273b69231275b197b2dbb8"
+  },
+  "name": "Auto Parts India",
+  "contactEmail": "parts@autopartsindia.com",
+  "phone": "+91-9876543216",
+  "address": "147 Industrial Area Hyderabad Telangana",
+  "notes": "Automotive parts and accessories"
+},
+{
+  "_id": {
+    "$oid": "69273b69231275b197b2dbb9"
+  },
+  "name": "Home Decor Palace",
+  "contactEmail": "decor@homepalace.com",
+  "phone": "+91-9876543217",
+  "address": "258 Design District Kolkata West Bengal",
+  "notes": "Home furnishing and decor"
+},
+{
+  "_id": {
+    "$oid": "69273b69231275b197b2dbba"
+  },
+  "name": "Sports Equipment Co.",
+  "contactEmail": "sports@equipmentco.com",
+  "phone": "+91-9876543218",
+  "address": "369 Sports Complex Jaipur Rajasthan",
+  "notes": "Sports goods and fitness equipment"
+},
+{
+  "_id": {
+    "$oid": "69273b69231275b197b2dbbb"
+  },
+  "name": "Green Garden Supplies",
+  "contactEmail": "green@gardensupply.com",
+  "phone": "+91-9876543219",
+  "address": "741 Agriculture Zone Lucknow Uttar Pradesh",
+  "notes": "Gardening and agricultural products"
+}]

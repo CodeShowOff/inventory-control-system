@@ -1,0 +1,810 @@
+[{
+  "_id": {
+    "$oid": "692782a808badef485db858c"
+  },
+  "name": "Laptop Dell Inspiron",
+  "sku": "TECH-001",
+  "description": "15.6 inch Full HD laptop with Intel i5 processor",
+  "category": "Electronics",
+  "price": 45000,
+  "costPrice": 38000,
+  "quantity": 25,
+  "reorderLevel": 5,
+  "expiryDate": {
+    "$date": "2026-12-31T00:00:00.000Z"
+  },
+  "supplier": "69273b69231275b197b2dbb2",
+  "isActive": true
+},
+{
+  "_id": {
+    "$oid": "692782a808badef485db858d"
+  },
+  "name": "Wireless Mouse Logitech",
+  "sku": "TECH-002",
+  "description": "Ergonomic wireless mouse with USB receiver",
+  "category": "Electronics",
+  "price": 899,
+  "costPrice": 650,
+  "quantity": 150,
+  "reorderLevel": 20,
+  "expiryDate": {
+    "$date": "2027-06-30T00:00:00.000Z"
+  },
+  "supplier": "69273b69231275b197b2dbb2",
+  "isActive": true
+},
+{
+  "_id": {
+    "$oid": "692782a808badef485db858e"
+  },
+  "name": "USB Flash Drive 32GB",
+  "sku": "TECH-003",
+  "description": "High-speed USB 3.0 flash drive",
+  "category": "Electronics",
+  "price": 599,
+  "costPrice": 420,
+  "quantity": 200,
+  "reorderLevel": 30,
+  "expiryDate": {
+    "$date": "2028-01-31T00:00:00.000Z"
+  },
+  "supplier": "69273b69231275b197b2dbb2",
+  "isActive": true
+},
+{
+  "_id": {
+    "$oid": "692782a808badef485db858f"
+  },
+  "name": "HDMI Cable 2m",
+  "sku": "TECH-004",
+  "description": "Premium HDMI cable with gold plating",
+  "category": "Electronics",
+  "price": 299,
+  "costPrice": 180,
+  "quantity": 100,
+  "reorderLevel": 15,
+  "expiryDate": {
+    "$date": "2028-12-31T00:00:00.000Z"
+  },
+  "supplier": "69273b69231275b197b2dbb2",
+  "isActive": true
+},
+{
+  "_id": {
+    "$oid": "692782a808badef485db8590"
+  },
+  "name": "Keyboard Mechanical",
+  "sku": "TECH-005",
+  "description": "RGB backlit mechanical gaming keyboard",
+  "category": "Electronics",
+  "price": 3499,
+  "costPrice": 2800,
+  "quantity": 50,
+  "reorderLevel": 10,
+  "expiryDate": {
+    "$date": "2027-03-31T00:00:00.000Z"
+  },
+  "supplier": "69273b69231275b197b2dbb2",
+  "isActive": true
+},
+{
+  "_id": {
+    "$oid": "692782a808badef485db8591"
+  },
+  "name": "Paracetamol 500mg",
+  "sku": "MED-001",
+  "description": "Pain relief tablets pack of 20",
+  "category": "Medicine",
+  "price": 45,
+  "costPrice": 28,
+  "quantity": 500,
+  "reorderLevel": 100,
+  "expiryDate": {
+    "$date": "2026-03-31T00:00:00.000Z"
+  },
+  "supplier": "69273b69231275b197b2dbb4",
+  "isActive": true
+},
+{
+  "_id": {
+    "$oid": "692782a808badef485db8592"
+  },
+  "name": "Vitamin C Tablets",
+  "sku": "MED-002",
+  "description": "Immunity booster 1000mg pack of 30",
+  "category": "Medicine",
+  "price": 250,
+  "costPrice": 180,
+  "quantity": 300,
+  "reorderLevel": 50,
+  "expiryDate": {
+    "$date": "2026-06-30T00:00:00.000Z"
+  },
+  "supplier": "69273b69231275b197b2dbb4",
+  "isActive": true
+},
+{
+  "_id": {
+    "$oid": "692782a808badef485db8593"
+  },
+  "name": "Hand Sanitizer 500ml",
+  "sku": "MED-003",
+  "description": "Alcohol-based hand sanitizer",
+  "category": "Healthcare",
+  "price": 150,
+  "costPrice": 95,
+  "quantity": 400,
+  "reorderLevel": 80,
+  "expiryDate": {
+    "$date": "2025-12-31T00:00:00.000Z"
+  },
+  "supplier": "69273b69231275b197b2dbb4",
+  "isActive": true
+},
+{
+  "_id": {
+    "$oid": "692782a808badef485db8594"
+  },
+  "name": "Face Mask N95",
+  "sku": "MED-004",
+  "description": "Medical grade N95 face masks pack of 10",
+  "category": "Healthcare",
+  "price": 299,
+  "costPrice": 210,
+  "quantity": 250,
+  "reorderLevel": 40,
+  "expiryDate": {
+    "$date": "2026-12-31T00:00:00.000Z"
+  },
+  "supplier": "69273b69231275b197b2dbb4",
+  "isActive": true
+},
+{
+  "_id": {
+    "$oid": "692782a808badef485db8595"
+  },
+  "name": "Digital Thermometer",
+  "sku": "MED-005",
+  "description": "Non-contact infrared thermometer",
+  "category": "Healthcare",
+  "price": 899,
+  "costPrice": 650,
+  "quantity": 80,
+  "reorderLevel": 15,
+  "expiryDate": {
+    "$date": "2027-12-31T00:00:00.000Z"
+  },
+  "supplier": "69273b69231275b197b2dbb4",
+  "isActive": true
+},
+{
+  "_id": {
+    "$oid": "692782a808badef485db8596"
+  },
+  "name": "A4 Paper Ream",
+  "sku": "OFF-001",
+  "description": "500 sheets white copier paper",
+  "category": "Stationery",
+  "price": 280,
+  "costPrice": 195,
+  "quantity": 300,
+  "reorderLevel": 50,
+  "expiryDate": {
+    "$date": "2028-12-31T00:00:00.000Z"
+  },
+  "supplier": "69273b69231275b197b2dbb5",
+  "isActive": true
+},
+{
+  "_id": {
+    "$oid": "692782a808badef485db8597"
+  },
+  "name": "Blue Ballpoint Pen",
+  "sku": "OFF-002",
+  "description": "Smooth writing ballpoint pen",
+  "category": "Stationery",
+  "price": 10,
+  "costPrice": 6,
+  "quantity": 1000,
+  "reorderLevel": 200,
+  "expiryDate": {
+    "$date": "2027-12-31T00:00:00.000Z"
+  },
+  "supplier": "69273b69231275b197b2dbb5",
+  "isActive": true
+},
+{
+  "_id": {
+    "$oid": "692782a808badef485db8598"
+  },
+  "name": "Stapler Heavy Duty",
+  "sku": "OFF-003",
+  "description": "Metal body stapler with staples",
+  "category": "Stationery",
+  "price": 180,
+  "costPrice": 120,
+  "quantity": 120,
+  "reorderLevel": 20,
+  "expiryDate": {
+    "$date": "2028-12-31T00:00:00.000Z"
+  },
+  "supplier": "69273b69231275b197b2dbb5",
+  "isActive": true
+},
+{
+  "_id": {
+    "$oid": "692782a808badef485db8599"
+  },
+  "name": "File Folder A4",
+  "sku": "OFF-004",
+  "description": "Plastic file folder assorted colors",
+  "category": "Stationery",
+  "price": 25,
+  "costPrice": 15,
+  "quantity": 500,
+  "reorderLevel": 100,
+  "expiryDate": {
+    "$date": "2028-12-31T00:00:00.000Z"
+  },
+  "supplier": "69273b69231275b197b2dbb5",
+  "isActive": true
+},
+{
+  "_id": {
+    "$oid": "692782a808badef485db859a"
+  },
+  "name": "Whiteboard Marker",
+  "sku": "OFF-005",
+  "description": "Dry erase marker pack of 4",
+  "category": "Stationery",
+  "price": 120,
+  "costPrice": 75,
+  "quantity": 200,
+  "reorderLevel": 40,
+  "expiryDate": {
+    "$date": "2027-06-30T00:00:00.000Z"
+  },
+  "supplier": "69273b69231275b197b2dbb5",
+  "isActive": true
+},
+{
+  "_id": {
+    "$oid": "692782a808badef485db859b"
+  },
+  "name": "Basmati Rice 5kg",
+  "sku": "FOOD-001",
+  "description": "Premium aged basmati rice",
+  "category": "Food",
+  "price": 450,
+  "costPrice": 350,
+  "quantity": 200,
+  "reorderLevel": 40,
+  "expiryDate": {
+    "$date": "2026-09-30T00:00:00.000Z"
+  },
+  "supplier": "69273b69231275b197b2dbb6",
+  "isActive": true
+},
+{
+  "_id": {
+    "$oid": "692782a808badef485db859c"
+  },
+  "name": "Cooking Oil 1L",
+  "sku": "FOOD-002",
+  "description": "Refined sunflower cooking oil",
+  "category": "Food",
+  "price": 180,
+  "costPrice": 140,
+  "quantity": 350,
+  "reorderLevel": 60,
+  "expiryDate": {
+    "$date": "2026-06-30T00:00:00.000Z"
+  },
+  "supplier": "69273b69231275b197b2dbb6",
+  "isActive": true
+},
+{
+  "_id": {
+    "$oid": "692782a808badef485db859d"
+  },
+  "name": "Whole Wheat Flour 10kg",
+  "sku": "FOOD-003",
+  "description": "Stone ground whole wheat flour",
+  "category": "Food",
+  "price": 380,
+  "costPrice": 290,
+  "quantity": 150,
+  "reorderLevel": 30,
+  "expiryDate": {
+    "$date": "2026-03-31T00:00:00.000Z"
+  },
+  "supplier": "69273b69231275b197b2dbb6",
+  "isActive": true
+},
+{
+  "_id": {
+    "$oid": "692782a808badef485db859e"
+  },
+  "name": "Sugar 1kg",
+  "sku": "FOOD-004",
+  "description": "White refined sugar",
+  "category": "Food",
+  "price": 55,
+  "costPrice": 40,
+  "quantity": 400,
+  "reorderLevel": 80,
+  "expiryDate": {
+    "$date": "2027-12-31T00:00:00.000Z"
+  },
+  "supplier": "69273b69231275b197b2dbb6",
+  "isActive": true
+},
+{
+  "_id": {
+    "$oid": "692782a808badef485db859f"
+  },
+  "name": "Tea Leaves 500g",
+  "sku": "FOOD-005",
+  "description": "Premium Assam tea leaves",
+  "category": "Food",
+  "price": 320,
+  "costPrice": 240,
+  "quantity": 180,
+  "reorderLevel": 35,
+  "expiryDate": {
+    "$date": "2026-12-31T00:00:00.000Z"
+  },
+  "supplier": "69273b69231275b197b2dbb6",
+  "isActive": true
+},
+{
+  "_id": {
+    "$oid": "692782a808badef485db85a0"
+  },
+  "name": "Cotton T-Shirt Men",
+  "sku": "FASH-001",
+  "description": "100% cotton round neck t-shirt",
+  "category": "Clothing",
+  "price": 499,
+  "costPrice": 320,
+  "quantity": 180,
+  "reorderLevel": 30,
+  "expiryDate": {
+    "$date": "2028-12-31T00:00:00.000Z"
+  },
+  "supplier": "69273b69231275b197b2dbb7",
+  "isActive": true
+},
+{
+  "_id": {
+    "$oid": "692782a808badef485db85a1"
+  },
+  "name": "Denim Jeans",
+  "sku": "FASH-002",
+  "description": "Slim fit blue denim jeans",
+  "category": "Clothing",
+  "price": 1299,
+  "costPrice": 850,
+  "quantity": 100,
+  "reorderLevel": 20,
+  "expiryDate": {
+    "$date": "2028-12-31T00:00:00.000Z"
+  },
+  "supplier": "69273b69231275b197b2dbb7",
+  "isActive": true
+},
+{
+  "_id": {
+    "$oid": "692782a808badef485db85a2"
+  },
+  "name": "Sports Shoes",
+  "sku": "FASH-003",
+  "description": "Running shoes with cushioned sole",
+  "category": "Footwear",
+  "price": 2499,
+  "costPrice": 1800,
+  "quantity": 75,
+  "reorderLevel": 15,
+  "expiryDate": {
+    "$date": "2027-12-31T00:00:00.000Z"
+  },
+  "supplier": "69273b69231275b197b2dbb7",
+  "isActive": true
+},
+{
+  "_id": {
+    "$oid": "692782a808badef485db85a3"
+  },
+  "name": "Cotton Socks Pack",
+  "sku": "FASH-004",
+  "description": "Cotton ankle socks pack of 3",
+  "category": "Clothing",
+  "price": 199,
+  "costPrice": 130,
+  "quantity": 250,
+  "reorderLevel": 50,
+  "expiryDate": {
+    "$date": "2028-12-31T00:00:00.000Z"
+  },
+  "supplier": "69273b69231275b197b2dbb7",
+  "isActive": true
+},
+{
+  "_id": {
+    "$oid": "692782a808badef485db85a4"
+  },
+  "name": "Leather Belt",
+  "sku": "FASH-005",
+  "description": "Genuine leather formal belt",
+  "category": "Accessories",
+  "price": 599,
+  "costPrice": 380,
+  "quantity": 120,
+  "reorderLevel": 25,
+  "expiryDate": {
+    "$date": "2028-12-31T00:00:00.000Z"
+  },
+  "supplier": "69273b69231275b197b2dbb7",
+  "isActive": true
+},
+{
+  "_id": {
+    "$oid": "692782a808badef485db85a5"
+  },
+  "name": "Engine Oil 1L",
+  "sku": "AUTO-001",
+  "description": "Synthetic engine oil 5W-30",
+  "category": "Automotive",
+  "price": 550,
+  "costPrice": 420,
+  "quantity": 200,
+  "reorderLevel": 40,
+  "expiryDate": {
+    "$date": "2027-12-31T00:00:00.000Z"
+  },
+  "supplier": "69273b69231275b197b2dbb8",
+  "isActive": true
+},
+{
+  "_id": {
+    "$oid": "692782a808badef485db85a6"
+  },
+  "name": "Car Battery 12V",
+  "sku": "AUTO-002",
+  "description": "Maintenance-free car battery",
+  "category": "Automotive",
+  "price": 4500,
+  "costPrice": 3600,
+  "quantity": 30,
+  "reorderLevel": 5,
+  "expiryDate": {
+    "$date": "2026-12-31T00:00:00.000Z"
+  },
+  "supplier": "69273b69231275b197b2dbb8",
+  "isActive": true
+},
+{
+  "_id": {
+    "$oid": "692782a808badef485db85a7"
+  },
+  "name": "Brake Pads Set",
+  "sku": "AUTO-003",
+  "description": "Ceramic brake pads for sedan",
+  "category": "Automotive",
+  "price": 1299,
+  "costPrice": 950,
+  "quantity": 60,
+  "reorderLevel": 12,
+  "expiryDate": {
+    "$date": "2027-12-31T00:00:00.000Z"
+  },
+  "supplier": "69273b69231275b197b2dbb8",
+  "isActive": true
+},
+{
+  "_id": {
+    "$oid": "692782a808badef485db85a8"
+  },
+  "name": "Air Filter",
+  "sku": "AUTO-004",
+  "description": "High performance air filter",
+  "category": "Automotive",
+  "price": 399,
+  "costPrice": 280,
+  "quantity": 100,
+  "reorderLevel": 20,
+  "expiryDate": {
+    "$date": "2027-12-31T00:00:00.000Z"
+  },
+  "supplier": "69273b69231275b197b2dbb8",
+  "isActive": true
+},
+{
+  "_id": {
+    "$oid": "692782a808badef485db85a9"
+  },
+  "name": "Windshield Wiper",
+  "sku": "AUTO-005",
+  "description": "All-weather windshield wiper",
+  "category": "Automotive",
+  "price": 250,
+  "costPrice": 170,
+  "quantity": 150,
+  "reorderLevel": 30,
+  "expiryDate": {
+    "$date": "2027-12-31T00:00:00.000Z"
+  },
+  "supplier": "69273b69231275b197b2dbb8",
+  "isActive": true
+},
+{
+  "_id": {
+    "$oid": "692782a808badef485db85aa"
+  },
+  "name": "LED Bulb 9W",
+  "sku": "HOME-001",
+  "description": "Energy saving LED bulb warm white",
+  "category": "Home & Living",
+  "price": 120,
+  "costPrice": 75,
+  "quantity": 400,
+  "reorderLevel": 80,
+  "expiryDate": {
+    "$date": "2027-12-31T00:00:00.000Z"
+  },
+  "supplier": "69273b69231275b197b2dbb9",
+  "isActive": true
+},
+{
+  "_id": {
+    "$oid": "692782a808badef485db85ab"
+  },
+  "name": "Curtain Set",
+  "sku": "HOME-002",
+  "description": "Blackout curtains 5ft x 7ft",
+  "category": "Home & Living",
+  "price": 1299,
+  "costPrice": 880,
+  "quantity": 60,
+  "reorderLevel": 12,
+  "expiryDate": {
+    "$date": "2028-12-31T00:00:00.000Z"
+  },
+  "supplier": "69273b69231275b197b2dbb9",
+  "isActive": true
+},
+{
+  "_id": {
+    "$oid": "692782a808badef485db85ac"
+  },
+  "name": "Cushion Cover",
+  "sku": "HOME-003",
+  "description": "Cotton cushion cover 16x16 inches",
+  "category": "Home & Living",
+  "price": 199,
+  "costPrice": 130,
+  "quantity": 200,
+  "reorderLevel": 40,
+  "expiryDate": {
+    "$date": "2028-12-31T00:00:00.000Z"
+  },
+  "supplier": "69273b69231275b197b2dbb9",
+  "isActive": true
+},
+{
+  "_id": {
+    "$oid": "692782a808badef485db85ad"
+  },
+  "name": "Table Lamp",
+  "sku": "HOME-004",
+  "description": "Modern design desk table lamp",
+  "category": "Home & Living",
+  "price": 899,
+  "costPrice": 620,
+  "quantity": 70,
+  "reorderLevel": 15,
+  "expiryDate": {
+    "$date": "2027-12-31T00:00:00.000Z"
+  },
+  "supplier": "69273b69231275b197b2dbb9",
+  "isActive": true
+},
+{
+  "_id": {
+    "$oid": "692782a808badef485db85ae"
+  },
+  "name": "Wall Clock",
+  "sku": "HOME-005",
+  "description": "Silent wall clock 12 inch",
+  "category": "Home & Living",
+  "price": 599,
+  "costPrice": 410,
+  "quantity": 90,
+  "reorderLevel": 18,
+  "expiryDate": {
+    "$date": "2027-12-31T00:00:00.000Z"
+  },
+  "supplier": "69273b69231275b197b2dbb9",
+  "isActive": true
+},
+{
+  "_id": {
+    "$oid": "692782a808badef485db85af"
+  },
+  "name": "Cricket Bat",
+  "sku": "SPORT-001",
+  "description": "Kashmir willow cricket bat full size",
+  "category": "Sports",
+  "price": 1899,
+  "costPrice": 1350,
+  "quantity": 40,
+  "reorderLevel": 8,
+  "expiryDate": {
+    "$date": "2028-12-31T00:00:00.000Z"
+  },
+  "supplier": "69273b69231275b197b2dbba",
+  "isActive": true
+},
+{
+  "_id": {
+    "$oid": "692782a808badef485db85b0"
+  },
+  "name": "Football Size 5",
+  "sku": "SPORT-002",
+  "description": "FIFA approved match football",
+  "category": "Sports",
+  "price": 899,
+  "costPrice": 650,
+  "quantity": 80,
+  "reorderLevel": 15,
+  "expiryDate": {
+    "$date": "2027-12-31T00:00:00.000Z"
+  },
+  "supplier": "69273b69231275b197b2dbba",
+  "isActive": true
+},
+{
+  "_id": {
+    "$oid": "692782a808badef485db85b1"
+  },
+  "name": "Yoga Mat",
+  "sku": "SPORT-003",
+  "description": "Non-slip exercise yoga mat 6mm",
+  "category": "Sports",
+  "price": 599,
+  "costPrice": 410,
+  "quantity": 100,
+  "reorderLevel": 20,
+  "expiryDate": {
+    "$date": "2027-12-31T00:00:00.000Z"
+  },
+  "supplier": "69273b69231275b197b2dbba",
+  "isActive": true
+},
+{
+  "_id": {
+    "$oid": "692782a808badef485db85b2"
+  },
+  "name": "Dumbbells 5kg Pair",
+  "sku": "SPORT-004",
+  "description": "Rubber coated dumbbells",
+  "category": "Sports",
+  "price": 1299,
+  "costPrice": 950,
+  "quantity": 50,
+  "reorderLevel": 10,
+  "expiryDate": {
+    "$date": "2028-12-31T00:00:00.000Z"
+  },
+  "supplier": "69273b69231275b197b2dbba",
+  "isActive": true
+},
+{
+  "_id": {
+    "$oid": "692782a808badef485db85b3"
+  },
+  "name": "Badminton Racket",
+  "sku": "SPORT-005",
+  "description": "Lightweight aluminum badminton racket",
+  "category": "Sports",
+  "price": 799,
+  "costPrice": 580,
+  "quantity": 70,
+  "reorderLevel": 14,
+  "expiryDate": {
+    "$date": "2027-12-31T00:00:00.000Z"
+  },
+  "supplier": "69273b69231275b197b2dbba",
+  "isActive": true
+},
+{
+  "_id": {
+    "$oid": "692782a808badef485db85b4"
+  },
+  "name": "Plant Fertilizer 1kg",
+  "sku": "GARD-001",
+  "description": "Organic plant fertilizer NPK",
+  "category": "Gardening",
+  "price": 180,
+  "costPrice": 125,
+  "quantity": 250,
+  "reorderLevel": 50,
+  "expiryDate": {
+    "$date": "2026-12-31T00:00:00.000Z"
+  },
+  "supplier": "69273b69231275b197b2dbbb",
+  "isActive": true
+},
+{
+  "_id": {
+    "$oid": "692782a808badef485db85b5"
+  },
+  "name": "Garden Gloves",
+  "sku": "GARD-002",
+  "description": "Heavy duty gardening gloves",
+  "category": "Gardening",
+  "price": 150,
+  "costPrice": 95,
+  "quantity": 150,
+  "reorderLevel": 30,
+  "expiryDate": {
+    "$date": "2027-12-31T00:00:00.000Z"
+  },
+  "supplier": "69273b69231275b197b2dbbb",
+  "isActive": true
+},
+{
+  "_id": {
+    "$oid": "692782a808badef485db85b6"
+  },
+  "name": "Watering Can 5L",
+  "sku": "GARD-003",
+  "description": "Plastic watering can with sprinkler",
+  "category": "Gardening",
+  "price": 250,
+  "costPrice": 170,
+  "quantity": 100,
+  "reorderLevel": 20,
+  "expiryDate": {
+    "$date": "2027-12-31T00:00:00.000Z"
+  },
+  "supplier": "69273b69231275b197b2dbbb",
+  "isActive": true
+},
+{
+  "_id": {
+    "$oid": "692782a808badef485db85b7"
+  },
+  "name": "Pruning Shears",
+  "sku": "GARD-004",
+  "description": "Sharp pruning garden shears",
+  "category": "Gardening",
+  "price": 399,
+  "costPrice": 280,
+  "quantity": 80,
+  "reorderLevel": 15,
+  "expiryDate": {
+    "$date": "2027-12-31T00:00:00.000Z"
+  },
+  "supplier": "69273b69231275b197b2dbbb",
+  "isActive": true
+},
+{
+  "_id": {
+    "$oid": "692782a808badef485db85b8"
+  },
+  "name": "Flower Pots Set",
+  "sku": "GARD-005",
+  "description": "Ceramic flower pots set of 3",
+  "category": "Gardening",
+  "price": 599,
+  "costPrice": 420,
+  "quantity": 120,
+  "reorderLevel": 25,
+  "expiryDate": {
+    "$date": "2027-12-31T00:00:00.000Z"
+  },
+  "supplier": "69273b69231275b197b2dbbb",
+  "isActive": true
+}]
